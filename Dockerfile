@@ -14,8 +14,8 @@ RUN zypper --non-interactive in bison ncurses-devel tack wget tar gzip gcc make 
     export LDFLAGS="-pie" && \
     export 'CFLAGS=-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIE' && \
     ls -ld . && whoami && \
-    CONFIG_SHELL=/bin/bash ./configure --host=x86_64-suse-linux-gnu --build=x86_64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-dependency-tracking && \
-    cat config.log && \
+    CONFIG_SHELL=/bin/bash ./configure --host=x86_64-suse-linux-gnu --build=x86_64-suse-linux-gnu --program-prefix= --disable-dependency-tracking --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info --disable-dependency-tracking || \
+    cat config.log && exit 1 && \
     /usr/bin/make -O -j8 V=1 VERBOSE=1 && \
     make install DESTDIR=/ && \
     /usr/bin/make -O -j8 V=1 VERBOSE=1 check
