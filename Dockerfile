@@ -8,7 +8,7 @@ ARG UNITS_VERSION=2.21
 
 RUN zypper --non-interactive in bison ncurses-devel tack wget tar gzip gcc make && \
     zypper clean && \
-    wget http://ftp.gnu.org/gnu/units/units-${UNITS_VERSION}.tar.gz && \
+    wget https://ftp.gnu.org/gnu/units/units-${UNITS_VERSION}.tar.gz && \
     tar -xf units-${UNITS_VERSION}.tar.gz && \
     cd units-${UNITS_VERSION} && \
     export LDFLAGS="-pie" && \
