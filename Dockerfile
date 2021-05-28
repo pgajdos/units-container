@@ -7,7 +7,9 @@ RUN zypper --non-interactive in bison ncurses-devel tack wget tar gzip gcc make 
     zypper clean && \
     wget http://ftp.gnu.org/gnu/units/units-${UNITS_VERSION}.tar.gz && \
     tar -xf units-${UNITS_VERSION}.tar.gz && \
+    ls -ld units-${UNITS_VERSION} && \
     cd units-${UNITS_VERSION} && \
+    ls -l * && \
     export LDFLAGS="-pie" && \
     export 'CFLAGS=-O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -Werror=return-type -flto=auto -g -fPIE' && \
     ls -ld . && whoami && \
