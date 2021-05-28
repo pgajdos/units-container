@@ -1,7 +1,4 @@
 #!BuildTag: units
-#
-# docker pull registry.opensuse.org/home/pgajdos/containers/units:latest
-#                                   ^projectname        ^repos     ^ build tag
 FROM opensuse/tumbleweed:latest
 
 ARG UNITS_VERSION=2.21
